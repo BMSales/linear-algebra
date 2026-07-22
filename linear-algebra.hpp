@@ -21,16 +21,20 @@ private:
 
 // TODO:
 // Add the following operations
+// addition and subtraction
+// adjugate matrix (too hard, maybe?)
 // determinant
+// eigenvalues and eigenvalue calculations (autovalor e autovetor)
+// gauss jordan
+// inverse matrix
+// scalar multiplication
 // transpose
-// inverse
-// gauss jordan shit
-// addition and subtraction, if that's a thing
-// autovalor e autovetor (not sure)
 
 // TODO:
 // Add the following functionalities
-// GetRows
-// GetCollumns
+// GetRow
+// GetCollumn
 // SwapRows
 // SwapCollumns
+// Create identity matrix
+// Determine if a square matrix is orthogonal
