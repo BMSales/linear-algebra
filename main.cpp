@@ -2,17 +2,34 @@
 #include "linear-algebra.hpp"
 
 int main(){
-	Matrix matrix_1 = Matrix(1, 2);
-	Matrix matrix_2 = Matrix(2, 6);
+	Matrix camera = Matrix(4, 4);
+	Matrix translation = Matrix(4, 4);
+	Matrix object = Matrix(1, 4);
 	Matrix product;
 
-	matrix_1.SetRandomValues();
-	matrix_2.SetRandomValues();
+	camera.SetValue(0, 0, 1);
+	camera.SetValue(1, 1, 1);
+	camera.SetValue(2, 2, 1);
+	camera.SetValue(3, 3, 1);
 
-	product = matrix_1 * matrix_2;
+	translation.SetValue(0, 0, 1);
+	translation.SetValue(1, 1, 1);
+	translation.SetValue(2, 2, 1);
+	translation.SetValue(3, 3, 1);
 
-	matrix_1.Print();
-	matrix_2.Print();
+	translation.SetValue(3, 0, 0);
+	translation.SetValue(3, 1, 0);
+	translation.SetValue(3, 2, -5);
+
+	object.SetValue(0, 0, 2);
+	object.SetValue(0, 1, 5);
+	object.SetValue(0, 2, -2);
+	object.SetValue(0, 3, 1);
+
+	product = object * translation;
+
+	translation.Print();
+	object.Print();
 	product.Print();
 	return 0;
 }

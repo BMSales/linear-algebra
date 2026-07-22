@@ -9,6 +9,7 @@ public:
 	Matrix(int rows, int cols);
 
 	float GetValue(int row, int col);
+	void SetValue(int row, int col, float value);
 	void SetRandomValues();
 	void Print();
 	Matrix operator*(Matrix rhs);
@@ -34,7 +35,13 @@ private:
 // Add the following functionalities
 // GetRow
 // GetCollumn
+// GetNumRows
+// GetNumCols
 // SwapRows
 // SwapCollumns
+// Create identity matrix
+// Create translation matrix
+// Create scaling matrix
+// Create rotation matrices
 // Create identity matrix
 // Determine if a square matrix is orthogonal

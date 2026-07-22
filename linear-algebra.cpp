@@ -25,6 +25,10 @@ float Matrix::GetValue(int row, int col){
 	return values[row][col];
 }
 
+void Matrix::SetValue(int row, int col, float value){
+	values[row][col] = value;
+}
+
 void Matrix::SetRandomValues(){
 	std::random_device device;
 	std::default_random_engine engine(device());
