@@ -2,7 +2,7 @@
 #include "linear-algebra.hpp"
 
 int main(){
-	Matrix matrix_1 = Matrix(2, 2);
+	Matrix matrix_1 = Matrix(1, 2);
 	Matrix matrix_2 = Matrix(2, 6);
 	Matrix product;
 

@@ -24,7 +24,7 @@ private:
 // addition and subtraction
 // adjugate matrix (too hard, maybe?)
 // determinant
-// eigenvalues and eigenvalue calculations (autovalor e autovetor)
+// eigenvalues and eigenvectors calculations (autovalor e autovetor)
 // gauss jordan
 // inverse matrix
 // scalar multiplication

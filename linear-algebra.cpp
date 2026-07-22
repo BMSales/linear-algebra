@@ -28,7 +28,7 @@ float Matrix::GetValue(int row, int col){
 void Matrix::SetRandomValues(){
 	std::random_device device;
 	std::default_random_engine engine(device());
-	std::uniform_int_distribution<int> uniform_dist(0, 2);
+	std::uniform_int_distribution<int> uniform_dist(0, 5);
 	for(int i = 0; i < rows; i++){
 		for(int j = 0; j < cols; j++){
 			values[i][j] = uniform_dist(engine);
