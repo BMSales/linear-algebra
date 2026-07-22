@@ -5,7 +5,7 @@
 Matrix::Matrix(){
 	rows = 0;
 	cols = 0;
-	values = {{0}};
+	values = {{}};
 }
 
 Matrix::Matrix(int rows, int cols){
@@ -50,20 +50,20 @@ void Matrix::Print(){
 	std::cout << std::endl;
 }
 
-Matrix Matrix::operator*(Matrix rhs){
-	if(this->cols != rhs.rows){
+Matrix Matrix::Multiply(Matrix input){
+	if(this->cols != input.rows){
 		std::cout << "Matrices cannot be multiplied!" << std::endl;
 		exit(-1);
 	}
 	int m = this->rows;
-	int n = rhs.cols;
+	int n = input.cols;
 	float helper = 0;
 	Matrix product = Matrix(m, n);
 
 	for(int i = 0; i < m; i++){
 		for(int j = 0; j < n; j++){
 			for(int k = 0; k < this->cols; k++){
-				helper += this->values[i][k] * rhs.values[k][j];
+				helper += this->values[i][k] * input.values[k][j];
 			}
 			product.values[i][j] = helper;
 			helper = 0;

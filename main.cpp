@@ -26,7 +26,7 @@ int main(){
 	object.SetValue(0, 2, -2);
 	object.SetValue(0, 3, 1);
 
-	product = object * translation;
+	product = object.Multiply(translation);
 
 	translation.Print();
 	object.Print();

@@ -12,7 +12,7 @@ public:
 	void SetValue(int row, int col, float value);
 	void SetRandomValues();
 	void Print();
-	Matrix operator*(Matrix rhs);
+	Matrix Multiply(Matrix rhs);
 
 private:
 	int rows;
