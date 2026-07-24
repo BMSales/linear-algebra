@@ -1,6 +1,10 @@
+#include <cmath>
 #include <random>
 #include <vector>
 #include "linear-algebra.hpp"
+
+#define M_PI 3.14159265358979323846
+#define RAD_CONV M_PI/180.0
 
 Matrix::Matrix(){
 	rows = 0;
@@ -38,6 +42,72 @@ void Matrix::SetRandomValues(){
 			values[i][j] = uniform_dist(engine);
 		}
 	}
+}
+
+void Matrix::Identity(int size){
+	if(size <= 0){
+		std::cout << "Invalid value for size!" << std::endl;
+		exit(-1);
+	}
+	this->rows = size;
+	this->cols = size;
+	this->values.resize(size);
+	for(int i = 0; i < size; i++){
+		this->values[i].resize(size);
+	}
+	for(int i = 0; i < size; i++){
+		this->values[i][i] = 1;
+	}
+}
+
+void Matrix::Translation(float x, float y, float z){
+	this->Identity(4);
+	this->values[3][0] = x;
+	this->values[3][1] = y;
+	this->values[3][2] = z;
+}
+
+void Matrix::Scaling(float x, float y, float z){
+	this->Identity(4);
+	this->values[0][0] = x;
+	this->values[1][1] = y;
+	this->values[2][2] = z;
+}
+
+void Matrix::RotationX(float angle){
+	float rad = angle * RAD_CONV;
+	float cos_rad = cos(rad);
+	float sin_rad = sin(rad);
+
+	this->Identity(4);
+	this->values[1][1] = cos_rad;
+	this->values[1][2] = -sin_rad;
+	this->values[2][1] = sin_rad;
+	this->values[2][2] = cos_rad;
+}
+
+void Matrix::RotationY(float angle){
+	float rad = angle * RAD_CONV;
+	float cos_rad = cos(rad);
+	float sin_rad = sin(rad);
+
+	this->Identity(4);
+	this->values[0][0] = cos_rad;
+	this->values[0][2] = sin_rad;
+	this->values[2][0] = -sin_rad;
+	this->values[2][2] = cos_rad;
+}
+
+void Matrix::RotationZ(float angle){
+	float rad = angle * RAD_CONV;
+	float cos_rad = cos(rad);
+	float sin_rad = sin(rad);
+
+	this->Identity(4);
+	this->values[0][0] = cos_rad;
+	this->values[0][1] = -sin_rad;
+	this->values[1][0] = sin_rad;
+	this->values[1][1] = cos_rad;
 }
 
 void Matrix::Print(){

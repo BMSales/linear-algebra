@@ -2,34 +2,27 @@
 #include "linear-algebra.hpp"
 
 int main(){
-	Matrix camera = Matrix(4, 4);
-	Matrix translation = Matrix(4, 4);
 	Matrix object = Matrix(1, 4);
-	Matrix product;
-
-	camera.SetValue(0, 0, 1);
-	camera.SetValue(1, 1, 1);
-	camera.SetValue(2, 2, 1);
-	camera.SetValue(3, 3, 1);
-
-	translation.SetValue(0, 0, 1);
-	translation.SetValue(1, 1, 1);
-	translation.SetValue(2, 2, 1);
-	translation.SetValue(3, 3, 1);
-
-	translation.SetValue(3, 0, 0);
-	translation.SetValue(3, 1, 0);
-	translation.SetValue(3, 2, -5);
-
-	object.SetValue(0, 0, 2);
-	object.SetValue(0, 1, 5);
-	object.SetValue(0, 2, -2);
 	object.SetValue(0, 3, 1);
+	Matrix translate = Matrix();
+	Matrix rotate_x = Matrix();
+	// Matrix rotate_y = Matrix();
+	// Matrix rotate_z = Matrix();
+	Matrix product = Matrix();
 
-	product = object.Multiply(translation);
+	translate.Translation(1.0, 1.0, 1.0);
+	rotate_x.RotationX(30);
+	// rotate_y.RotationY(45.0);
+	// rotate_z.RotationZ(45.0);
 
-	translation.Print();
 	object.Print();
+	translate.Print();
+	rotate_x.Print();
+
+	product = translate.Multiply(rotate_x);
+	product.Print();
+	product = object.Multiply(product);
+
 	product.Print();
 	return 0;
 }

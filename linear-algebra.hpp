@@ -9,8 +9,17 @@ public:
 	Matrix(int rows, int cols);
 
 	float GetValue(int row, int col);
+
 	void SetValue(int row, int col, float value);
 	void SetRandomValues();
+
+	void Identity(int size);
+	void Translation(float x, float y, float z);
+	void Scaling(float x, float y, float z);
+	void RotationX(float angle);
+	void RotationY(float angle);
+	void RotationZ(float angle);
+
 	void Print();
 	Matrix Multiply(Matrix rhs);
 
@@ -39,9 +48,4 @@ private:
 // GetNumCols
 // SwapRows
 // SwapCollumns
-// Create identity matrix
-// Create translation matrix
-// Create scaling matrix
-// Create rotation matrices
-// Create identity matrix
 // Determine if a square matrix is orthogonal
